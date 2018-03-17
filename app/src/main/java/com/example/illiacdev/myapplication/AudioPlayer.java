@@ -36,6 +36,7 @@ public class AudioPlayer {
     }
 
     public void play() {
+        DSP dsp = new DSP();
 
         String path = getDownloadDir() + File.separatorChar + "m1.snd";
         new Thread(() -> {
@@ -61,6 +62,8 @@ public class AudioPlayer {
                     e.printStackTrace();
                     break;
                 }
+
+                dsp.reverb_process(writeData);
 
                 mAudioTrack.write(writeData, 0, ret); // AudioTrack 에 write 를 하면 스피커로 송출됨
             }

@@ -25,7 +25,7 @@ public class DSPTest {
 
         assertThat(1,is(1));
 
-        new DSP().reverb_process(new short[10]);
+        new DSP().reverb_process(new byte[10]);
 
     }
 

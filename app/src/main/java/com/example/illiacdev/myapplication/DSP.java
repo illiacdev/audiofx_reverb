@@ -10,5 +10,5 @@ public class DSP {
         System.loadLibrary("dsp-lib");
     }
 
-    public native void reverb_process(short[] pcm_data);
+    public native void reverb_process(byte[] pcm_data);
 }

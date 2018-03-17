@@ -5,6 +5,7 @@
 #ifndef MYAPPLICATION2_DSP_H
 #define MYAPPLICATION2_DSP_H
 
+#include <SuperpoweredDecoder.h>
 #include "SuperpoweredReverb.h"
 #include "malloc.h"
 

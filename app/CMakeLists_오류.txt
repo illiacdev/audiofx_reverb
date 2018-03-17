@@ -10,11 +10,11 @@ set(
 	${PROJECT_SOURCE_DIR}/libs
 )
 
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
-message( ++++++++++++++++++++++++++++++ ${ANDROID_ABI})
 
 add_library( # Sets the name of the library.
              native-lib
@@ -27,9 +27,7 @@ add_library( # Sets the name of the library.
               )
 
 
-file(GLOB CPP_FILES "*.cpp")
 add_library( # Sets the name of the library.
-
              dsp-lib
 
              # Sets the library as a shared library.
@@ -38,12 +36,10 @@ add_library( # Sets the name of the library.
              # Provides a relative path to your source file(s).
              src/main/cpp/dsp-lib.cpp
              src/main/cpp/DSP.cpp
-              ${CPP_FILES}
-              ${PATH_TO_SUPERPOWERED}/AndroidIO/SuperpoweredAndroidAudioIO.cpp
-              ${PATH_TO_SUPERPOWERED}/SuperpoweredNBandEQ.cpp
-
-             )
-
+             ${CPP_FILES}
+             ${PATH_TO_SUPERPOWERED}/AndroidIO/SuperpoweredAndroidAudioIO.cpp
+             ${PATH_TO_SUPERPOWERED}/SuperpoweredNBandEQ.cpp
+              )
 
 include_directories(src/main/cpp)
 include_directories(${PATH_TO_SUPERPOWERED})
@@ -66,16 +62,13 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                        native-lib
+                       native-lib
                        dsp-lib
-
-
 
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib}
-                           log
-                            android
-                            OpenSLES
-                            ${PATH_TO_SUPERPOWERED}/libSuperpoweredAndroid${ANDROID_ABI}.a
+                        android
+                        OpenSLES
+                        ${PATH_TO_SUPERPOWERED}/libSuperpoweredAndroid${ANDROID_ABI}.a
                        )

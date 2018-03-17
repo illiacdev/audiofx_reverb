@@ -16,20 +16,8 @@ set(
 # Gradle automatically packages shared libraries with your APK.
 message( ++++++++++++++++++++++++++++++ ${ANDROID_ABI})
 
-add_library( # Sets the name of the library.
-             native-lib
-
-             # Sets the library as a shared library.
-             SHARED
-
-             # Provides a relative path to your source file(s).
-             src/main/cpp/native-lib.cpp
-              )
-
-
 file(GLOB CPP_FILES "*.cpp")
 add_library( # Sets the name of the library.
-
              dsp-lib
 
              # Sets the library as a shared library.
@@ -66,10 +54,7 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 target_link_libraries( # Specifies the target library.
-                        native-lib
                        dsp-lib
-
-
 
                        # Links the target library to the log library
                        # included in the NDK.

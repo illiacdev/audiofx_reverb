@@ -14,7 +14,7 @@ Java_com_example_illiacdev_myapplication_DSP_reverb_1process(JNIEnv *env, jobjec
     jbyte *pcm_data = env->GetByteArrayElements(pcm_data_, NULL);
     int length = env->GetArrayLength(pcm_data_);
 
-    dsp->audioFX_Reverb_Process((short*)pcm_data, length);
+    dsp->audioFX_Reverb_Process((short*)pcm_data, length/2);
 
     env->ReleaseByteArrayElements(pcm_data_, pcm_data, 0);
 }

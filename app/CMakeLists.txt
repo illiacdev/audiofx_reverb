@@ -29,6 +29,7 @@ add_library( # Sets the name of the library.
 
              # Provides a relative path to your source file(s).
              src/main/cpp/dsp-lib.cpp
+             src/main/cpp/DSP.cpp
               )
 
 
